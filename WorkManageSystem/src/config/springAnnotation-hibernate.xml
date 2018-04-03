@@ -15,7 +15,7 @@
 		<!-- 数据库的Id,用户名与密码 -->
 		<property name="url" value="jdbc:mysql://localhost:3306/wms" />
 		<property name="username" value="root" />
-		<property name="password" value="314159" />
+		<property name="password" value="" />
 	</bean>
 
 	<bean id="sessionFactory"
