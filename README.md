@@ -56,54 +56,27 @@ WorkManageSystem   （作业管理系统）
         3. 查看老师发布的作业；
         4. 修改个人信息（修改或重置密码）；
         
-    2.2 界面设计
-      2.2.1 主页界面
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
+    2.2 界面设计（部分展示）
+      2.2.1 主页界面
+   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/LoginPage.png)
 
       2.2.2 管理员界面
         管理员——教师总览页面
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
-
-        管理员——教师添加页面
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
-
-        管理员——个人设置页面
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
+   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/TeacherOverviewPage.png)
 
       2.2.3 教师界面
-        教师——作业总览页面
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
-   
-        教师——发布作业页面
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
-        
         教师——统计提交作业页面
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
-        
-        教师——个人设置页面
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
+   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/StatisticalSubmissionPage.png)
         
       2.2.4 学生界面
         学生——主页面
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
-        
-        学生——上传作业页面
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
-        
-        学生——下载作业页面
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
-        
-        学生——查看批阅结果页面
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
-        
-        学生——个人设置页面
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
+   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/StudentPage.png)
         
     2.4 主要功能模块
       2.4.1 管理员模块
         管理员模块：包括登录、修改教师信息、添加教师信息、删除教师信息、修改学生信息、
                    添加学生信息、删除学生信息、修改个人信息、退出等功能。如下图所示：
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
+   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/ManagerModule.png)
         
         登录：管理员通过输入用户名密码登录系统。
         修改教师信息：管理员可修改教师的信息，可以修改姓名、性别、密码和所在学院，
@@ -123,7 +96,7 @@ WorkManageSystem   （作业管理系统）
 
       2.4.2 教师模块
         教师模块：学生模块包括发布公告、发布作业、批改作业、统计提交情况等。
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
+   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/TeacherModule.png)
         
         发布公告：通过该功能，教师可以对某个班课程或作业变更的情况进行公告说明，学生在自己的系统中
                  会看到针对自己班的公告内容，发布教师与学生之间进行信息交流。
@@ -134,7 +107,7 @@ WorkManageSystem   （作业管理系统）
 
       2.4.3 学生模块
         学生模块：学生模块包括查看发布作业、上传下载作业、查看批阅情况等。
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
+   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/StudentModule.png)
         
         查看发布作业：主要是让学生用户查看由教师对该学生发布的所有的作业，
                      学生可以查看作业内容以及要求，还可以查看作业的完成情况。
@@ -163,15 +136,15 @@ WorkManageSystem   （作业管理系统）
     3.3 Spring DAO
         该系统通过Spring Dao 进行数据库访问，具体的数据库方法都封装在各个实体类对应的Dao中，
         创建Dao时采用了接口编程，提高了系统的可维护性。
-
+   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/SpringDao.png)
 
     3.4 Spring MVC
         该系统的整体框架为Spring MVC+Hibernate，Spring MVC 负责视图层和控制层的逻辑，
         Hibernate负责数据库的数据库关系对象映射，项目的Spring MVC结构如下图所示：
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
+   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/SpringMVC.png)
    
         Spring 的各种配置目录如下图所示：
-   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
+   ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/Spring.png)
         
     3.5 Hibernate
         该系统的数据库操作采用了Hibernate+JDBC，Hibernate的使用简化了对数据库的操作。
