@@ -1,0 +1,230 @@
+﻿-- 作业管理系统
+
+-- 创建数据库
+-- create database WMS;
+
+-- 创建表
+-- use wms
+-- go
+-- 管理员表--------------------------------------------------------------------
+create table Manager(
+id int PRIMARY KEY AUTO_INCREMENT,-- id自增长
+m_account VARCHAR(10),		-- 账号
+m_name VARCHAR(20),		-- 姓名 --
+m_password VARCHAR(20)	 	-- 密码
+);
+select * from Manager;
+-- drop table Manager;
+-- 教师表----------------------------------------------------------------------
+create table Teacher(
+id int PRIMARY KEY AUTO_INCREMENT,-- id自增长
+t_account VARCHAR(10),		-- 账号
+t_name VARCHAR(20),		-- 姓名
+t_sex VARCHAR(2),		-- 性别
+t_dept VARCHAR(20),		-- 系部
+t_password VARCHAR(20)	 	-- 密码
+);
+select * from Teacher;
+-- drop table Teacher;
+-- 学生表----------------------------------------------------------------------
+create table Student(
+id int PRIMARY KEY AUTO_INCREMENT,-- id自增长
+s_account VARCHAR(10),		-- 账号
+s_name VARCHAR(20),		-- 姓名
+s_sex VARCHAR(2),		-- 性别
+s_c_id VARCHAR(10),		-- 班级
+s_password VARCHAR(20), 	-- 密码
+s_dept VARCHAR(20)		-- 系部
+);
+select * from Student;
+-- drop table Student;
+-- 班级表----------------------------------------------------------------------
+create table Clazz(
+id int PRIMARY KEY AUTO_INCREMENT,-- id自增长
+c_id VARCHAR(10),		-- 班级号
+c_count INT			-- 人数
+);
+select * from Clazz;
+-- drop table Clazz;
+-- 作业布置表------------------------------------------------------------------
+create table Work(
+w_id INT NOT NULL AUTO_INCREMENT,	-- 作业号
+w_title VARCHAR(50),			-- 主题
+w_content VARCHAR(500),			-- 内容
+w_deadline VARCHAR(30),			-- 截止时间
+w_course VARCHAR(20),			-- 课程
+w_t_account VARCHAR(10),		-- 教师号
+w_c_id VARCHAR(10),			-- 班级号
+PRIMARY KEY(w_id)			-- 主键
+);
+select * from Work;
+-- drop table Work;
+-- 作业批改表------------------------------------------------------------------
+create table CheckWork(
+ch_id INT NOT NULL auto_increment,	-- 作业批改号
+ch_s_account VARCHAR(10),		-- 学号
+ch_c_id VARCHAR(10),			-- 班级号
+ch_w_id INT,				-- 作业号
+ch_score INT,				-- 得分
+ch_mark VARCHAR(100),			-- 评语
+ch_checkTime DateTime,			-- 批改时间
+ch_upTime DateTime,			-- 提交时间
+ch_path VARCHAR(100),			-- 存储路径
+PRIMARY KEY(ch_id)			-- 主键
+);
+select * from CheckWork;
+-- drop table CheckWork;
+-- create table Check
+-- 公告表----------------------------------------------------------------------
+create table Notice(
+nt_id INT NOT NULL auto_increment,	-- 公告号
+nt_title VARCHAR(20),			-- 主题
+nt_content VARCHAR(500),		-- 内容
+nt_time DateTime,			-- 发布时间
+nt_t_account VARCHAR(10),		-- 教师号
+nt_c_id VARCHAR(10),			-- 班级
+PRIMARY KEY(nt_id)									-- 主键
+);
+select * from Notice;
+-- drop table Notice;
+-- -------------------------------------课程表--------------------------------------------------------
+create table course(
+c_id int not null auto_increment,		-- (主键)课程号--
+c_name varchar(20),									-- 课程名 --
+c_credit int,											-- 学分 --
+primary key(c_id)										-- 主键 --
+);
+
+====插入数据========================================================================
+--  管理员 -------------------------------------------------------------------------
+insert into Manager(m_account,m_name,m_password) values('admin','admin','admin');
+insert into Manager(m_account,m_name,m_password) values('1111','张琦','admin');
+insert into Manager(m_account,m_name,m_password) values('2222','何昶源','admin');
+insert into Manager(m_account,m_name,m_password) values('3333','任孟凯','admin');
+-- 教师表----------------------------------------------------------------------
+insert into Teacher(t_account,t_name,t_sex,t_dept,t_password) values('140001','舒坚','男','软件学院','bbbbbb');
+insert into Teacher(t_account,t_name,t_sex,t_dept,t_password) values('140002','严赢富','男','软件学院','bbbbbb');
+insert into Teacher(t_account,t_name,t_sex,t_dept,t_password) values('140003','罗海平','男','软件学院','bbbbbb');
+insert into Teacher(t_account,t_name,t_sex,t_dept,t_password) values('140004','梁旗军','男','软件学院','bbbbbb');
+insert into Teacher(t_account,t_name,t_sex,t_dept,t_password) values('140005','苏曦','男','软件学院','bbbbbb');
+insert into Teacher(t_account,t_name,t_sex,t_dept,t_password) values('140006','刘琳岚','女','信工学院','bbbbbb');
+-- 学生表----------------------------------------------------------------------
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201101','王嫣兰','女','142011','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201102','赵雯楚','女','142011','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201103','李嘉丽','女','142011','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201104','廖美欢','女','142011','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201105','卢超素','女','142011','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201106','张琦','男','142011','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201107','何昶源','男','142011','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201108','王启宁','男','142011','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201109','任孟凯','男','142011','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201110','孙明峰','男','142011','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201111','崔平平','男','142011','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201112','高晨阳','男','142011','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201113','胡烨','男','142011','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201114','黄帅英','男','142011','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201115','廖亮','男','142011','cccccc','软件学院');
+
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201201','陆亦可','女','142012','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201202','侯亮平','男','142012','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201203','沙瑞金','男','142012','cccccc','软件学院');
+
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201301','高小琴','女','142013','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201302','李达康','男','142013','cccccc','软件学院');
+insert into Student(s_account,s_name,s_sex,s_c_id,s_password,s_dept) values('14201303','易学习','男','142013','cccccc','软件学院');
+-- 班级表----------------------------------------------------------------------
+insert into Clazz(c_id,c_count) values('142011',15);
+insert into Clazz(c_id,c_count) values('142012',3);
+insert into Clazz(c_id,c_count) values('142013',3);
+
+-- 作业布置表------------------------------------------------------------------
+insert into work(w_title,w_content,w_deadline,w_course,w_t_account,w_c_id)
+values('操作系统课后作业','把书抄十遍！！！！！！！！！','2017-5-12','操作系统','140003','142011');
+
+insert into work(w_title,w_content,w_deadline,w_course,w_t_account,w_c_id)
+values('数据结构课后作业','把书抄二十遍！！！！！！！！！','2017-5-21','数据结构','140006','142013');
+
+insert into work(w_title,w_content,w_deadline,w_course,w_t_account,w_c_id)
+values('软件工程后作业','没作业！！！！！！！！！','2017-5-1','软件工程','140001','142011');
+
+insert into work(w_title,w_content,w_deadline,w_course,w_t_account,w_c_id)
+values('UML课后作业','把书抄五十遍！！！','2017-5-12','软件建模','140002','142012');
+
+insert into work(w_title,w_content,w_deadline,w_course,w_t_account,w_c_id)
+values('操作系统课后作业','把书抄十遍！！！！！！！！！','2017-5-22','操作系统','140003','142011');
+
+--作业批改表---------------------------------------------------------------------
+insert into checkwork(ch_s_account,ch_c_id,ch_w_id ,ch_score ,ch_mark ,ch_checkTime ,ch_upTime ,ch_path )
+values('14201103','142011',2,0,null,null,'2017-4-30','D:\\BackUp');
+
+insert into checkwork(ch_s_account,ch_c_id ,ch_w_id ,ch_score ,ch_mark ,ch_checkTime ,ch_upTime ,ch_path )
+values('14201104','142011',2,0,null,null,'2017-4-30','D:\\BackUp');
+
+insert into checkwork(ch_s_account,ch_c_id ,ch_w_id ,ch_score ,ch_mark ,ch_checkTime ,ch_upTime ,ch_path )
+values('14201105','142011',2,0,null,null,'2017-4-30','D:\\BackUp');
+
+insert into checkwork(ch_s_account,ch_c_id ,ch_w_id ,ch_score ,ch_mark ,ch_checkTime ,ch_upTime ,ch_path )
+values('14201106','142011',2,100,'good,很好，不错','2017-5-1','2017-4-30','D:\\BackUp');
+
+insert into checkwork(ch_s_account,ch_c_id ,ch_w_id ,ch_score ,ch_mark ,ch_checkTime ,ch_upTime ,ch_path )
+values('14201107','142011',2,0,null,null,'2017-4-30','D:\\BackUp');
+
+--公告表-------------------------------------------------------------------------
+insert into notice(nt_title,nt_content,nt_time,nt_t_account,nt_c_id)
+values('调课通知','明天的课星期六补','2017-3-8','140001','142011');
+
+insert into notice(nt_title,nt_content,nt_time,nt_t_account,nt_c_id)
+values('调课通知','明天的课星期六补','2017-3-8','140001','142012');
+
+insert into notice(nt_title,nt_content,nt_time,nt_t_account,nt_c_id)
+values('调课通知','明天的课星期六补','2017-3-8','140001','142013');
+
+insert into notice(nt_title,nt_content,nt_time,nt_t_account,nt_c_id)
+values('调课通知3','明天的课星期日补','2017-4-8','140003','142011');
+
+insert into notice(nt_title,nt_content,nt_time,nt_t_account,nt_c_id)
+values('调课通知3','明天的课星期日补','2017-4-8','140003','142012');
+
+-- -------------------------------------课程表--------------------------------------------------------
+insert into course(c_name,c_credit) values('软件工程',2);
+insert into course(c_name,c_credit) values('数据结构',2);
+insert into course(c_name,c_credit) values('软件建模',2);
+insert into course(c_name,c_credit) values('web网络编程',2);
+insert into course(c_name,c_credit) values('操作系统',2);
+insert into course(c_name,c_credit) values('Android',2);
+
+
+-- 查询表========================================================================
+select * from Manager;
+select * from Teacher;
+select * from Student;
+select * from Clazz;
+select * from Work;
+select * from CheckWork;
+select * from Notice;
+-- 删除表========================================================================
+drop table Manager;
+drop table Teacher;
+drop table Student;
+drop table Clazz;
+drop table Work;
+drop table CheckWork;
+drop table Notice;
+
+
+-- 触发器========================================================================
+-- 重复上传时，删除重复的记录，自动更新
+DROP TRIGGER IF EXISTS trg_checkwork_delete_old;
+create trigger trg_checkwork_delete_old
+before insert on checkwork
+for each row 
+begin
+delete from checkwork 
+where ch_s_account = new.ch_s_account;
+end;
+
+-- 测试触发器
+insert into checkwork(ch_s_account,ch_c_id,ch_w_id,ch_score,ch_mark,ch_checkTime,ch_upTime,ch_path)
+values('14201106','142011',3,100,'good','2017-06-01 09:41:30','2017-06-01 09:41:37','F:\');
+
+drop trigger trg_checkwork_delete_old;
