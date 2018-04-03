@@ -32,9 +32,11 @@ WorkManageSystem   （作业管理系统）
 二、系统设计
 
     2.1 系统总体设计
+    
       2.1.1 系统总体功能需求
         该系统主要适用于学校教师对班级作业的管理，其中主要包括教师在线批改作业、查看学生完成作业情况，
         方便学生向老师提交作业、下载作业以及查看老师批改情况等功能。
+        
       2.1.2 功能模块的具体内容和需求明细
         根据系统要求可以将作业管理系统分为管理员模块、教师模块、学生模块三大模块。如下结构图:
    ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
@@ -57,7 +59,9 @@ WorkManageSystem   （作业管理系统）
         4. 修改个人信息（修改或重置密码）；
         
     2.2 界面设计（部分展示）
+    
       2.2.1 主页界面
+      
    ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/LoginPage.png)
 
       2.2.2 管理员界面
