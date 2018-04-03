@@ -57,12 +57,10 @@ WorkManageSystem   （作业管理系统）
         4. 修改个人信息（修改或重置密码）；
         
     2.2 界面设计
-    
       2.2.1 主页界面
    ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
 
       2.2.2 管理员界面
-      
         管理员——教师总览页面
    ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
 
@@ -73,7 +71,6 @@ WorkManageSystem   （作业管理系统）
    ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
 
       2.2.3 教师界面
-      
         教师——作业总览页面
    ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
    
@@ -87,7 +84,6 @@ WorkManageSystem   （作业管理系统）
    ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
         
       2.2.4 学生界面
-
         学生——主页面
    ![image](https://github.com/TouchDreamRen/WorkManageSystem/raw/master/screenshots/FunctionalStructure.png)
         
@@ -120,7 +116,7 @@ WorkManageSystem   （作业管理系统）
                      学号是用来标注学生唯一性信息，所以不可以修改。
         添加学生信息：管理员可以添加学生信息，通过输入学号、姓名、性别、密码和所在学院，
                      点击添加按钮即可成功添加一条学生信息。
-        删除学生信息：管理员可以删除学生信息，直接在学生信息表中选取要删除的一条学生记录，
+        删除学生信息：管理员可以删除学生信息，直接在学生信息表中选取要删除的一条学生记录，
                      然后，点击删除按钮即可。
         修改个人信息：管理员同时可以修改个人信息，包括姓名、密码等。
         退出：即管理员退出作业管理系统。
