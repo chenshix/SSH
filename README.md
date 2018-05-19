@@ -1,6 +1,8 @@
 # WorkManageSystem
 WorkManageSystem   （作业管理系统）
 
+基于Spring+SpringMVC+Hibernate框架的项目
+
 一、系统功能说明
 
     1.1 系统简介
